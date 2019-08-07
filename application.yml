@@ -1,0 +1,4 @@
+# 配置项目的访问路径 即：访时需要添加 /boot2
+server.context-path=/boot02
+#制定配置文件的位置
+spring.config.location=G:/application.properties
