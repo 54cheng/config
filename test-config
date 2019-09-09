@@ -4,11 +4,11 @@ server:
 spring:
     active:
     - app
-    eureka: 
-     client: 
-       register-with-eureka: false #获取服务提供方地址,本身不注册进eureka服务
-       service-url: 
-         defaultZone: http://eureka7001.com:7001/eureka/
+    #eureka: 
+     #client: 
+      # register-with-eureka: false #获取服务提供方地址,本身不注册进eureka服务
+       #service-url: 
+        # defaultZone: http://eureka7001.com:7001/eureka/
     
 ---
 server:
@@ -16,11 +16,11 @@ server:
   
 spring:
   profiles: dev
-  eureka: 
-    client: 
-      register-with-eureka: false #获取服务提供方地址,本身不注册进eureka服务
-      service-url: 
-        defaultZone: http://eureka7001.com:7001/eureka/
+ # eureka: 
+  #  client: 
+   #   register-with-eureka: false #获取服务提供方地址,本身不注册进eureka服务
+    #  service-url: 
+     #   defaultZone: http://eureka7001.com:7001/eureka/
 
 ---
 server:
@@ -28,10 +28,10 @@ server:
   
 spring:
   profiles: app
-  eureka: 
-    client: 
-      register-with-eureka: false #获取服务提供方地址,本身不注册进eureka服务
-      service-url: 
-        defaultZone: http://eureka7001.com:7001/eureka/
+  #eureka: 
+   # client: 
+    #  register-with-eureka: false #获取服务提供方地址,本身不注册进eureka服务
+     # service-url: 
+      #  defaultZone: http://eureka7001.com:7001/eureka/
 
   
