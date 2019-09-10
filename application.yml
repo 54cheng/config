@@ -21,7 +21,6 @@ spring:
   
 server:
   port: 90
-  
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
