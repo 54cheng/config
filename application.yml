@@ -14,12 +14,14 @@ eureka:
     prefer-ip-address: true     #访问路径可以显示IP地址
     
 ---
-server:
-  port: 90
   
 spring:
   profiles: dev
   datasource: dev
+  
+server:
+  port: 90
+  
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
@@ -29,12 +31,13 @@ eureka:
     prefer-ip-address: true     #访问路径可以显示IP地址
 
 ---
-server:
-  port: 70
-  
 spring:
   profiles: app
   datasource: app
+ 
+server:
+  port: 70
+  
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
