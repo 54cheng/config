@@ -1,0 +1,4 @@
+1.gitee上，新建一个repository，名称任意
+2.Language  选择 java或其他，Add .gitignore  选择Maven(idea引入项目后可以配置.gitignore文件，忽略非提交文件-不用纳入版本管理的文件)
+  选择分支模式：一般是生产/开发模式
+3.点击new按钮，新建一个repository，复制地址，在idea中：File->New->Project from version Control
