@@ -13,7 +13,9 @@
 </dependencyManagement>
 
 
-服务的注册与发现：（参考下面链接的实例）
+服务的注册与发现nacos：（参考下面链接的实例）
 https://github.com/alibaba/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-discovery-example/readme-zh.md
+
+服务的远程调用openfeign：
 
 
