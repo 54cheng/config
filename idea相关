@@ -1,2 +1,12 @@
 关于从git上拷贝或拉取项目，添加.gitignore 忽略相关文件
 如果一开始没有。gitignore文件，可以从其他module拷贝，添加忽略文件即可
+
+ IDEA编译时出现 Information:java: javacTask: 源发行版 1.X 需要目标发行版 1.X
+ 检查下面几个地方设置是否一致...
+1.Project Structure下（File->Project Structure...）
+ Sources选项卡->Languate level
+ Dependencies选项卡->Module SDK
+2.Settings下找到Java Compiler
+ 里边有两个设置Project bytecode version,Target bytecode version
+3.Settings下找到Maven Runner 里边有JRE
+
