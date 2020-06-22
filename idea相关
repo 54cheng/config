@@ -1,7 +1,4 @@
-关于从git上拷贝或拉取项目，添加.gitignore 忽略相关文件
-如果一开始没有。gitignore文件，可以从其他module拷贝，添加忽略文件即可
-
- IDEA编译时出现 Information:java: javacTask: 源发行版 1.X 需要目标发行版 1.X
+------ IDEA编译时出现 Information:java: javacTask: 源发行版 1.X 需要目标发行版 1.X
  检查下面几个地方设置是否一致...
 1.Project Structure下（File->Project Structure...）
  Sources选项卡->Languate level
@@ -10,3 +7,31 @@
  里边有两个设置Project bytecode version,Target bytecode version
 3.Settings下找到Maven Runner 里边有JRE
 
+
+-----IntelliJ IDEA里Maven默认情况下编译版本为JDK1.5
+IntelliJ IDEA里面Maven插件，如果pom.xml里面没有设置编译版本，便采用默认的1.5版本，即便安装的JDK是jdk1.7、jdk1.8也是采用1.5版本进行编译。
+这样，编译时idea就会报如下警告：
+Warning:java: source value 1.5 is obsolete and will be removed in a future release
+或
+Warning:java: 源值1.5已过时, 将在未来所有发行版中删除 
+解决方法
+1、在Maven里指定编译版本
+由于是Maven没指定编译版本引起的，所以先在pom.xml指定编译版本，添加如下内容指定编译版本(一般情况下版本和所用jdk版本保持一致，如我这里是1.8)：
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+或者
+<properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
