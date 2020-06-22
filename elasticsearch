@@ -1,0 +1,18 @@
+使用filter进行查询，不进行相关性得分计算，效率高
+
+match：
+    address.keyword:xxx   ---精确匹配，不分词（完全相等才能匹配）
+ 
+match-phrase：短语匹配，不分词（包含即可匹配）
+    address：xxxx
+    
+一般全文检索字段使用match，其他字段使用term
+
+es是存储，查询，分析的工具
+
+springboot-starter-parent  自动管理es，引入rest-high-level-client时查看下es的版本是否符合要求
+
+保存查询数据的同步异步方式
+
+
+避免数据扁平化处理，使用nested类型
