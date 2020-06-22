@@ -35,3 +35,10 @@ Warning:java: 源值1.5已过时, 将在未来所有发行版中删除
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 </properties>
+
+
+--------Maven异常：Could not find artifact
+用Maven build（"clean tomcat7:run" ）  Maven聚合工程时，出现了一下问题:
+Could not find artifact com.xxxx.xxxx:pom:0.0.1-SNAPSHOT 
+原因是本地仓库缺少了xxxx.xxxx:pom:0.0.1-SNAPSHOT, 原来是忘记了将父工程打包到本地仓库 ，
+运行聚合工程前记得先将依赖的工程都先Maven install到本地仓库，否则也会出现以上问题
