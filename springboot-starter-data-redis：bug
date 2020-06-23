@@ -4,7 +4,7 @@ lettuce的bug导致netty对外内存溢出 netty如果没有指定对外内存�
 可以通过-Dio.netty.maxDirectMemory进行设置（不治本：还是会报异常，只是推迟异常出现的时间）
 解决方案：升级lettuce客户端
         切换使用jedis
-
+lettuce 和jedis都是操作redis的底层客户端，spring对其进行封装redisTemplate
 <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-redis</artifactId>        
