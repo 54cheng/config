@@ -1,0 +1,2 @@
+SpringBoot2.0统一处理404,500等http错误跳转页
+新建/scr/main/resources/public/error文件夹，并创建对应的error页：404.html，500.html
