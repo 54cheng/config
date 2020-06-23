@@ -1,0 +1,21 @@
+会产生对外内存溢出：outofdirectMemoryerror
+springboot2.0以后默认使用lettuce作为操作redis的客户端，使用netty进行网络通信
+lettuce的bug导致netty对外内存溢出 netty如果没有指定对外内存，默认使用-Xmx设置的内存大小
+可以通过-Dio.netty.maxDirectMemory进行设置（不治本：还是会报异常，只是推迟异常出现的时间）
+解决方案：升级lettuce客户端
+        切换使用jedis
+
+<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>        
+        <exclusions>
+                <exclusion>
+                        <groupId>io.lettuce</groupId>
+                        <artifactId>lettuce-core</artifactId>
+                </exclusion>
+        </exclusions>
+</dependency>
+<dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+</dependency>
