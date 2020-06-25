@@ -1,0 +1,27 @@
+springboot返回modelandview步骤
+1，添加模版引擎thymeleaf 或者 freemaker
+  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+  </dependency>
+  
+  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemaker</artifactId>
+  </dependency>
+
+2.可以配置相关信息（以freemaker为例：）
+可以参见FreeMarkerProperties类
+@ConfigurationProperties(prefix = "spring.freemarker")
+public class FreeMarkerProperties extends AbstractTemplateViewResolverProperties {
+
+	public static final String DEFAULT_TEMPLATE_LOADER_PATH = "classpath:/templates/";
+
+	public static final String DEFAULT_PREFIX = "";
+
+	public static final String DEFAULT_SUFFIX = ".ftlh";
+  
+  thymeleaf相同 ThymeleafProperties类，有相关默认配置，均可在applicatiom.yml或application.properties中配置
+  
+  当然也可以根据需要返回json格式的数据或者是字符串
+  
