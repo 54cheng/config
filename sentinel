@@ -18,3 +18,20 @@ sentinel-dashboard-1.7.1.jar 使用Java -jar sentinel-dashboard-1.7.1.jar命令�
 
 如果出现sentinel无法监控服务的情况，请对照版本说明
 https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E
+
+4添加审计模块，实时监控
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        Endpoint 支持
+
+在使用 Endpoint 特性之前需要在 Maven 中添加 spring-boot-starter-actuator 依赖，并在配置中允许 Endpoints 的访问。
+
+    Spring Boot 1.x 中添加配置 management.security.enabled=false。暴露的 endpoint 路径为 /sentinel
+
+    Spring Boot 2.x 中添加配置 management.endpoints.web.exposure.include=*。暴露的 endpoint 路径为 /asentinelctuator/
+
+Sentinel Endpoint 里暴露的信息非常有用。包括当前应用的所有规则信息、日志目录、当前实例的 IP，Sentinel Dashboard 地址，Block Page，应用与 Sentinel Dashboard 的心跳频率等等信息。
+
+默认的流控规则保存在客户端的内存中的，客户端一重启，流控规则失效
